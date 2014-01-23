@@ -1,24 +1,13 @@
 function SampleViewFacade ($) {
-	var me = this;
+	var me = this,
+		document = $('body')[0].ownerDocument;
 	
 	me.getCheckbox = function () {
-		var result = $('.sample :checkbox:first').eq(0);
-		
-		if (result.length === 1) {
-			return result[0];
-		}
-		
-		return null;
+		return document.querySelector('.sample input[type="checkbox"]');
 	};
 	
 	me.getFieldset = function () {
-		var result = $('.sample fieldset').eq(0);
-		
-		if (result.length === 1) {
-			return result[0];
-		}
-		
-		return null;
+		return document.querySelector('.sample fieldset');
 	}
 	
 	me.bindClick = function (element, callback) {
